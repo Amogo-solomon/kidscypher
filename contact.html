@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Coding</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <section class="mx-4 md:mx-12">
+        <div class="flex flex-col md:flex-row gap-4 md:gap-20 items-center mt-4">
+            <div class="flex flex-col md:w-1/2">
+                <h1 class="text-4xl font-bold mb-4">Contact Us</h1>
+                <span class="italic text-lg mb-4">Have any questions? We'd love to hear from you. </span>
+                <div class="flex flex-col gap-3">
+                    <div class="flex flex-row gap-5">
+                        <img class="h-5 w-5 sm:h-8 sm:w-8" src="images/phone.png" alt="phone" />
+                        <span>09082716744</span>
+                    </div>
+                    <div class="flex flex-row gap-5">
+                        <img class="h-5 w-5 sm:h-8 sm:w-8" src="images/email.png" alt="email" />
+                        <span class="">hello@wootlab.ng</span>
+                    </div>
+                    <div class="flex flex-row gap-5">
+                        <img class="h-5 w-5 sm:h-8 sm:w-8" src="images/location.png" alt="location" />
+                        <span>29, Usuma Street Maitama, Abuja</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center md:w-1/2">
+                <img class="shadow-2xl h-64 md:h-auto rounded-lg" src="images/contact.png" alt="imageonline">
+            </div>
+        </div>
+    </section>
+
+    <!-- the form section -->
+    <section class="mx-4 md:mx-12">
+        <div class="flex flex-col items-center justify-center w-full mt-5 ml-1 gap-6 p-6 border border-gray-400_01 bg-white-A700 shadow-sm rounded-lg md:w-[600px]">
+            <form onSubmit={handleSubmit1} class="w-full md:w-[500px]">
+                <div class="flex flex-col mb-6">
+                    <label for="fullName" class="text-gray-900_01 sm:text-xs">Enter Name(s) <span class="text-deep_orange-A700">*</span></label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="" class="w-full p-2 rounded-lg border border-gray-300" />
+                </div>
+            
+                <div class="flex flex-col mb-6">
+                    <label for="email" class="text-gray-900_01 sm:text-xs">Email Address <span class="text-deep_orange-A700">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="" class="w-full p-2 rounded-lg border border-gray-300" />
+                </div>
+            
+                <div class="flex flex-col mb-6">
+                    <label for="mobileNumber" class="text-gray-900_01 sm:text-xs">Mobile Number <span class="text-deep_orange-A700">*</span></label>
+                    <input type="number" id="mobileNumber" name="mobileNumber" required placeholder="" class="w-full p-2 rounded-lg border border-gray-300" />
+                </div>
+            
+                <div class="flex flex-col mb-6">
+                    <label for="preferredPackage" class="text-gray-900_01 sm:text-xs">Subject <span class="text-deep_orange-A700">*</span></label>
+                    <select id="preferredPackage" name="preferredPackage" required class="w-full p-2 rounded-lg border border-gray-300 text-gray-900_01">
+                        <option value="">Software Development</option>
+                        <option value="">Schedule KidsCypher Demo</option>
+                        <option value="">Technology Training</option>
+                        <option value="">Talent Outsourcing</option>
+                        <option value="">Others</option>
+                    </select>
+                </div>
+            
+                <div class="flex flex-col mb-6">
+                    <label for="message" class="text-gray-900_01 sm:text-xs text-md ">Message <span class="text-deep_orange-A700">*</span></label>
+                    <textarea id="message" name="message" required placeholder="" class="w-full p-2 rounded-lg border border-gray-300 resize-y" rows="4"></textarea>
+
+                </div>
+            
+                <div class="flex justify-center">
+                    <button type="submit" class="w-full md:w-60 rounded-lg text-white  font-medium h-10 text-base hover:bg-navy-dark transition duration-300 ease-in-out" style="background-color:#000042">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<nav class="bg-white text-black py-3 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center px-4 md:px-10">
+        <!-- Logo -->
+        <img class="w-30 h-20" src="images/kidscypher.png" alt="kidscypher">
+        <!-- Hamburger Menu Button -->
+        <button id="mobile-menu-button" class="block md:hidden text-gray-800">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <!-- Menu -->
+        <ul id="navMenu" class="hidden md:flex space-x-4 gap-10 font-semibold text-xl">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact Us</a></li>
+        </ul>
+        <!-- Mode Switch Button -->
+        <div>
+            <button id="modeSwitchNavbar" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded shadow-lg md:mr-4">Switch Mode</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="block md:hidden bg-white px-4 py-2">
+    <ul class="flex flex-col space-y-2">
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact Us</a></li>
+    </ul>
+</div>
+
+<script>
+    // Toggle mobile menu on click
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+     // Show mobile menu on hover
+     document.getElementById('mobile-menu-button').addEventListener('mouseover', function() {
+        document.getElementById('mobile-menu').classList.remove('hidden');
+    });
+
+    // Hide mobile menu on mouse leave
+    document.getElementById('mobile-menu').addEventListener('mouseleave', function() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+    });
+  
+</script>

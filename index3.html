@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Coding</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles can be added here */
+    </style>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Kids Coding</h1>
+            <div>
+                <button id="modeSwitchNavbar" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded mr-4">Male</button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="heroBgImg" className="bg-cover bg-center h-[85vh] relative"></section>
+    
+
+    <div class="container mx-auto py-16 text-center">
+        <h1 id="pageTitle" class="text-4xl font-bold mb-8"></h1>
+        <p id="pageSubtitle" class="text-gray-600 mb-8"></p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8" id="contentSection">
+            <!-- Content will be dynamically added here -->
+        </div>
+    </div>
+
+    <div id="modal" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-8 rounded shadow-md">
+            <h2 class="text-2xl font-bold mb-4">Choose Your Mode</h2>
+            <button id="maleModeBtn" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded mr-4">Male</button>
+            <button id="femaleModeBtn" class="px-4 py-2 bg-pink-500 text-white font-semibold rounded">Female</button>
+        </div>
+    </div>
+
+    <script src="script.jsx"></script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Coding</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles can be added here */
+    </style>
+</head>
+<body class="bg-gray-100 h-screen">
+    <nav class="bg-white text-black py-3 shadow-lg  ">
+        <!-- <nav class="bg-gray-800 text-white py-4 "> -->
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <!-- <h1 class="text-2xl font-bold">Kids Cypher Coding</h1> -->
+			<img
+				class="w-30 h-20"
+				src="images/kidscypher.png"
+				alt="kidscypher"
+			/>
+          <!--  Hamburger Menu Button -->
+          <button id="mobile-menu-button" class="block md:hidden text-gray-800">
+             <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+             </svg>
+          </button>
+        <!--   Menu -->
+            <ul id="navMenu" class="hidden md:flex space-x-4 gap-10 font-semibold text-xl">
+                <li><a href="" >Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+           <!--  Mode Switch Button -->
+            <div>
+                <button id="modeSwitchNavbar" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded shadow-lg mr-4">Switch Mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden font-semibold bg-white px-4 py-2 absolute h-screen w-1/2 z-20 txtPoppinsSemiBold32">
+        <ul class="flex flex-col space-y-2">
+            <li><a href="">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+ <!--    <section id="heroSection" class="hero bg-cover bg-center text-white py-5 h-70vh "> -->
+        <!-- <div class="container   mx-20 flex flex-col md:flex-row items-start justify-center sm:items-center sm:justify-center mr-[50px] ml-[50px] sm:w-full sm:ml-[1px] sm:mr-[1px]">
+            <div id="heroLeftDiv" class="flex flex-col w-full items-start justify-center bg-blue-70 mr-4 p-4 sm:mr-[1px] sm:ml-[1px] rounded-lg shadow-lg">
+                <h1 class="  sm:text-4xl md:text-md text-lg font-bold text-gray-800 mr-10 pb-5 ">Unlock Your Child's Coding Potential</h1>
+                <p id="pageSubtitle" class=" mb-8 ">Learn to code and build amazing projects!</p>
+                <div class="flex justify-center">
+                <button id="enrolNow" class="px-8 py-3  text-white font-semibold rounded shadow-lg ">Enrol Now</button>
+                </div>
+            </div>
+            <div id="hereRightDiv" class="w-full relative mr-4 md:mr-0 ">
+                <div id="heroRightDivPics" class="bg-cover relative z-10 shadow-lg rounded-lg "></div>
+            </div>
+            
+            <div id="heroRightDivBelowImage" class="absolute  right-20 bottom-12 md:right-20  w-1/3 h-1/2 z-0 opacitty-50 shadow-lg rounded-lg"></div>
+		
+			<button id="enrolNow" class="px-8 py-3  text-white font-semibold rounded hidden">Enrol Now</button>
+		</div> -->
+        <section id="heroSection" class="hero bg-cover bg-center text-white py-5 h-auto">
+            <div class="container mx-4 sm:mx-0 px-4 flex flex-col md:flex-row items-center justify-center sm:items-start sm:justify-center">
+                <div id="heroLeftDiv" class="flex flex-col items-center justify-center w-full p-4 mb-4 md:mb-0 rounded-lg shadow-lg">
+                    <h1 class="text-2xl sm:text-4xl font-bold text-gray-800 mb-2 md:mb-5">Unlock Your Child's Coding Potential</h1>
+                    <p id="pageSubtitle" class="text-base mb-4">Learn to code and build amazing projects!</p>
+                    <button id="enrolNow" class="px-8 py-3 text-white font-semibold rounded shadow-lg w-full sm:w-auto">Enrol Now</button>
+                </div>
+                
+                <div id="hereRightDiv" class="w-full relative mr-0 md:mr-4">
+                    <div id="heroRightDivPics" class="bg-cover relative z-10 shadow-lg rounded-lg"></div>
+                </div>
+                <div id="heroRightDivBelowImage" class="absolute right-4 bottom-4 md:right-20 md:bottom-12 w-1/3 h-1/2 z-0 opacity-50 shadow-lg rounded-lg hidden md:block"></div>
+            </div>
+        <!-- </section> -->
+        
+
+    <div class="container mx-auto py-16 text-center mx-10">
+        <h1 id="pageTitle" class="text-4xl font-bold mb-8 hidden"></h1>
+        <!-- <p id="pageSubtitle" class="text-gray-600 mb-8"></p> -->
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8" id="contentSection">
+            <!-- Content will be dynamically added here -->
+        </div>
+    </div>
+</section>
+ <!--  pop up for mode switch -->
+    <div id="modal" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 hidden z-10">
+        <div class="bg-white p-8 rounded shadow-md">
+            <h2 class="text-2xl font-bold mb-4">Choose Your Mode</h2>
+            <button id="maleModeBtn" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded mr-4">Male</button>
+            <button id="femaleModeBtn" class="px-4 py-2 bg-purple-700 text-white font-semibold rounded">Female</button>
+        </div>
+    </div>
+
+ <!--   the objective page; BELOW HERO -->
+    <section id="" class="hero bg-cover bg-center text-white py-20 h-150vh  bg-blue-50 border border-gray-400_01 rounded-lg">
+        <!-- <section id="heroSection" class="hero bg-cover bg-center text-white py-20 h-150vh mb-10"> -->
+
+            <div class="container   flex flex-col md:flex-row items-start justify-center "> <!-- mr-[50px] ml-[50px]  -->
+               
+                <div id="" class=" w-full relative mr-4 md:mr-0">
+                    <div id="heroRightDivPics" class="bg-cover relative z-10 shadow-lg rounded-lg"></div> <!-- dynamically adding image from js -->
+                    <Img
+                        class="h-200vh md:h-auto object-cover rounded-lg  w-100 shadow-lg"
+                        src="images/img-group-pics.png"
+                        alt="imagecomingsoon"
+                     />
+                </div>
+
+                <div id="" class="absolute  left-20 top-20 md:right-20  w-1/3 h-1/2 z-0 opacitty-50 shadow-lg rounded-lg bg-purple-700 hidden"></div>
+                
+
+                <div id="" class="flex flex-col w-full items-start justify-center bg-blue-70 mr-[50px] p-4 rounded-lg shadow-lg">
+                    <h1 class="text-4xl font-bold text-gray-800 mr-10 pb-5 ">Kids Cypher Coding</h1>
+                    <p id="pageSubtitle" class=" mb-8 text-gray-800 ">Kids Cypher, a Wootlab digital club initiative, was developed to teach young children coding and programming ​languages
+                         as an afterschool summer program with a goal of 100,000 students per state. Wootlab has a ​structured curriculum and uses a mixed approach to teach kids 
+                         programming ideas and techniques, ​combining small, face-to-face and online teacher-led lessons with build-as-you-learn projects. Our goal is to ​develop future
+                          African tech leaders and, as a result, a new generation of entrepreneurs that can tackle local and ​global issues.</p>
+                          <p id="pageSubtitleObjective" class=" mb-8 ">Start Your Learning Journey </p>
+                    <div class="flex justify-center">
+                    <button id="enrolNow1" class="px-8 py-3  text-white font-semibold rounded shadow-lg ">Enrol Now</button>
+                    </div>
+                 
+                </div>
+            </div>
+</section>
+
+    <section class="hidden">
+    <div class=" flex w-full h-[600px] flex-col sm:flex-row gap-8 items-center justify-center  md:px-10 sm:px-5 px-[49px] py-[37px] rounded-[20px] w-full mb-[0px]  border border-gray-400_01 bg-white-A700 shadow-sm rounded-lg h-70vh">
+      <div class="flex flex-row  items-center justify-center ml-1.5 md:ml-[0] mb-0 ml-[50px] mr-[50px]">
+       <!--  <Img
+          class="h-200vh md:h-auto object-cover rounded-lg  w-100"
+          src="images/img-group-pics.png"
+          alt="imagecomingsoon"
+       /> -->
+      </div>
+      <div class="flex flex-col  border border-gray-400_01 shadow-sm rounded-lg pb-5 bg-cover bg-center bg-fixed" style="background-image:url('images/online.png')">
+          <h1 class="text-gray-800 ml-1.5 md:ml-[0] md:text-3xl  text-[25px] text-white sm:text-lg font-bold text-center">        
+			"Welcome to our Kids Coding Mentoring Program!
+          </h1>
+          <Text  class="!text-gray-900_01 md:text-sm sm:text-sm text-center pt-[10px] mt-5 mb-5 text-white">
+            Our aim is to ignite a passion for coding in young minds while fostering creativity, critical thinking, 
+			and problem-solving skills. Through engaging hands-on activities and personalized mentorship, we empower 
+			children to explore the fascinating world of technology with confidence.
+          </Text>
+      </div> 
+   </div>
+  </section>
+
+<!--  mode of learning section -->
+
+<section id="sectionThree" class="mx-1 border border-gray-400_01 bg-white-A700 shadow-sm rounded-lg  sm:w-[98%] ">
+	<h1 class="text-3xl font-bold text-center mb-7 text-gray-800" >Mode of Instruction</h1>
+  <div class="flex flex-col md:flex-row  gap-5 mx-10 mb-10 ">
+    	<div class="flex-1  border border-gray-400_01 bg-white-A700 rounded-lg shadow-sm mb-5">
+			<Img
+				class="h-100vh md:h-auto object-cover rounded-bl-lg rounded-lg w-full "
+				src="images/img-onsite.png"
+				alt="imageonsite"
+	 		/>
+			<h2 class="font-bold text-2xl pl-5 pb-2 text-gray-800">Onsite classes</h2>
+			<span class="font-style:italic pl-5 pb-3 text-gray-800">Learning to code is more fun with robots, VR / AR, IoT!</span>
+			<p class="text-gray-800 md:text-sm sm:text-sm pt-[10px] pb-5 pl-5 pr-5" >
+				Understanding complex coding concepts such as algorithms, loops, variables and functions will be 
+				easier and more fun by using Robots and so on. Students will learn computer literacy and make simple 
+				3D games while collaborating in learning coding logic, and closely monitored by professionals dedicated to the progress of each learner.
+			</p>
+    	</div>
+		<div class="flex-1 border border-gray-400_01 bg-white-A700 rounded-lg shadow-sm mb-5">
+			<Img
+				class="h-100vh md:h-auto object-cover rounded-bl-lg rounded-lg w-full"
+				src="images/img-online.png"
+				alt="imageonline"
+	 		/>
+			<h2 class="text-gray-800 font-bold text-2xl pl-5 pb-2">Online virtual classes</h2>
+			<span class="font-style:italic pl-5 pb-2">Flexible timing, flexible learning path, professional curriculum.</span>
+			<p  class="text-gray-800 md:text-sm sm:text-sm  pt-[10px] pb-5 pl-5 pr-5">
+				Hundreds of students have learned coding from home guided by professional tutors through zoom meetings. Our online curriculum and 
+				mode of teaching provide an experience similar to in-person tutoring. Our students learn through practicals and virtual projects in
+				 small-group classes led by professional instructors, using world-class curriculum and flexible timing.
+			</p>
+    	</div>
+    </div>
+  
+</section>
+
+<!-- curriculum section -->
+<!-- <section class=" w-full " style="background-color: #2f3030">
+	<div class="mx-12">
+    	<p id="pageSubtitle" class="text-gray-600 mb-8 text-center">Start your coding journey now!</p>
+    	<h3 class="text-5xl font-bold text-center my-7">Core Track Curriculum</h3>
+
+		<div class="flex flex-col md:flex-row gap-5 items-center justify-center">
+			<div class=" h-200vh w-1/2" style="background-color:#212222">rr</div>
+			<div class=" h-200vh w-1/2" style="background-color:#212222">rr</div>
+			<div class=" h-200vh w-1/2" style="background-color:#212222">rr</div>
+		</div>
+	</div>
+</section> -->
+
+<section id="sectionFour" class="w-full bg-blue-50 py-12 mx-1 border border-gray-400_01  shadow-sm rounded-lg" >
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-gray-800  text-center mb-8">Core Courses</h2> 
+
+        <div class="flex flex-col md:flex-row gap-5 items-center justify-center">
+            <!-- Card 1 -->
+            <div class="flex-1 max-w-xs bg-blue-50 rounded-lg overflow-hidden shadow-md">
+                <img src="images/scratch.png" alt="Image 1" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Scratch Programming</h3>
+                    <p class="text-gray-800 text-sm">
+						Scratch helps young people learn to think creatively, reason systematically, and work collaboratively by programming their own interactive stories, games, and animations — essential skills for life in the 21st century.
+					</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flex-1 max-w-xs bg-blue-50 rounded-lg overflow-hidden shadow-md">
+                <img src="images/python.png" alt="Image 2" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Python Programming</h3>
+                    <p class="text-gray-800 text-sm">
+						Python is a great programming language with which to start learning to code. Python is a powerful, easy-to-read, high-level programming language. This means commands are English like words instead of complicated 0s and 1s and this makes it easy for kids to learn Python with little or no prior programming knowledge..
+					</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flex-1 max-w-xs bg-blue-50 rounded-lg overflow-hidden shadow-md">
+                <img src="images/raspberry.png" alt="Image 3" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Raspberry Pi</h3>
+                    <p class="text-gray-800 text-sm">
+						The Raspberry Pi is a precious tool for kids to introduce them to the world of programming and coding. Raspberry Pi can be configured with various toys such as cars, trains, and rudimentary robots.
+					</p>
+                </div>
+            </div>
+        </div>
+		
+    </div>
+	<div class="flex items-center justify-center">
+		<button id="enrolNow2" class=" px-6 py-2  text-white font-semibold rounded text-center mt-10 md:w-48 lg:w-64 ">Enrol Now</button>
+	</div>
+</section>
+
+
+
+<section className="  bg-cover bg-center md:h-auto h-auto  w-full relative top-2 md:my-auto">
+	
+</section>
+
+    <!-- <section>
+      <div className="flex md:flex-1 flex-col gap-[26px] justify-start md:mt-0 mt-[150px] w-[77%] md:w-full ml-auto md:ml-[0px]   ">
+        <div className="bg-white-A700 flex flex-col items-center justify-center  md:px-10 sm:px-5 px-[49px] py-[37px] rounded-[20px] w-full mb-[0px]">
+          <div className="flex flex-col items-center justify-center ml-1.5 md:ml-[0] mb-0">
+            <Img
+              className="h-20 md:h-auto object-cover rounded-bl-lg rounded-br-lg w-20"
+              src="images/img_coming_soon.png"
+              alt="imagecomingsoon"
+           />
+          </div>
+              <Text
+                className="ml-1.5 md:ml-[0] md:text-3xl  text-[32px] text-teal-600 sm:text-lg  "
+                size="txtPoppinsSemiBold32"
+               >
+                Coming Soon
+              </Text>
+              <Text as="p" className="!text-gray-900_01 md:text-sm sm:text-sm text-center pt-[10px]">
+                Subscribe to get notification as soon as we lunch this page
+              </Text>
+          
+       </div>
+    </div> 
+    </section> -->
+
+<section>
+    <div class="max-w-screen-lg mx-auto py-10 px-4 md:px-0">
+        <h2 class="text-3xl font-semibold text-center text-gray-800 mb-10"></h2> Testimonial</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide flex flex-col items-center">
+                        <div class="Testimonial-image bg-gray-300 rounded-full w-32 h-32 md:h-40 flex items-center justify-center mb-4 overflow-hidden ">
+                            <img src="https://via.placeholder.com/150" alt="Testimonial Image">
+                        </div>
+                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-2">Martin Nick</h3>
+                        <p class="text-gray-600 text-sm md:text-base text-center">
+                            I currently have 6 kids who are in our current class. They absolutely love it! After the hour is up there 
+                            is a great big groan because it went too fast! I plan to continue with this group throughout the year and add another class after school hours. 
+                            So far it has been very user friendly and I have been able to teach it flawlessly!
+                            I have a class tomorrow and will ask them if they have any feedback they would like to send to you as well.
+                        </p>
+                    </div>
+                    <div class="swiper-slide flex flex-col items-center">
+                        <div>
+                             
+                        </div>
+
+                    </div>
+                    <div class=""
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+    <footer id="footer1" class="bg-gray-900 py-10 md:py-20 px-4 md:px-10">
+        <div id="footerContainer" class="flex flex-col md:flex-row gap-6 md:gap-12 px-10 ">
+            <div class="w-full md:w-1/2">
+                <h2 class="text-white font-bold mb-4 md:mb-6">Kids Cypher</h2>
+                <span class="text-white text-sm break-words md:max-w-md ">
+                    We are a team of competent developers from around the world that give life to great ideas and help leading companies build the world's best engineering teams
+                </span>
+                <div class="flex flex-row mt-4 md:mt-6">
+                    <img class="w-10 h-10" src="images/facebook.png" alt="Facebook">
+                    <img class="w-10 h-10 ml-2" src="images/x.png" alt="X">
+                    <img class="w-10 h-10 ml-2" src="images/youtube.png" alt="Youtube">
+                </div>
+            </div>
+            
+            <div class="flex flex-row flex-col md:w-auto gap-10">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-white font-bold">Onsite Classes</h2>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-white font-bold">Onsite Classes</h2>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-white font-bold">Online Classes</h2>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold">Other Pages</h2>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+    <div class="text-gray-800 bg-white text-center py-2 w-full font-bold rounded-bl-lg">
+        <span>All Rights Reserve</span>
+    </div>
+    
+
+    <script src="script.jsx"></script>
+</body>
+</html>
