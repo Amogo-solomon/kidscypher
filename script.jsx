@@ -104,7 +104,7 @@ function setMode(mode) {
   const heroRightDivBelowImage = document.getElementById('heroRightDivBelowImage');
   const pageSubtitleObjective = document.getElementById('pageSubtitleObjective');
   const sectionThree = document.getElementById('sectionThree');
-  const sectionFour = document.getElementById('sectionFour');
+
  /*  const footer1 = docuemnt.getElementById('footer1') */
   // Set the dimensions (width and height) of the element
 /* heroRightDivPics.style.width = "500px";  */// Set your desired width
@@ -183,8 +183,8 @@ heroRightDivPics.style.height = height;
 
    /*   SECTION 4 */
    
-   sectionFour.classList.remove('bg-purple-100');
-   sectionFour.classList.add('bg-blue-50');
+  /*  sectionFour.classList.remove('bg-purple-100');
+   sectionFour.classList.add('bg-blue-50'); */
 
    /* FOOTER SECTION */
   /*  footer1.classList.remove('bg-purple-500');
@@ -247,8 +247,8 @@ heroRightDivPics.style.height = height;
       
    /*   SECTION 4 */
    
-   sectionFour.classList.remove('bg-blue-50');
-   sectionFour.classList.add('bg-purple-100');
+  /*  sectionFour.classList.remove('bg-blue-50');
+   sectionFour.classList.add('bg-purple-100'); */
 
        /*   SECTION 3 */
       /*  footer1.classList.remove('bg-blue-500')
@@ -257,3 +257,4 @@ heroRightDivPics.style.height = height;
 
   localStorage.setItem('mode', mode);
 }
+
